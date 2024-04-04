@@ -1,0 +1,37 @@
+.titulo {
+  color:hotpink;
+  width: 234px;
+  height: 33px;
+  background-color: teal;
+}
+
+#seleccionar_mascota{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.tarjeta_de_mokepon {
+  width: 100px;
+  height: 100px;
+  background: aquamarine;
+  padding: 10px;
+  box-sizing: border-box;
+  margin: 5px;
+  border: 1px solid hotpink;
+}
+
+input {
+  display: none;
+}
+
+#boton_mascota{
+  width: 85px;
+  height: 20px;
+  background: rgb(252, 0, 0);
+  padding: 1px;
+  box-sizing:border-box;
+  margin: 5px;
+  border: 1px solid black;
+}
