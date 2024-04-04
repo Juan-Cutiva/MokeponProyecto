@@ -3,25 +3,35 @@
     <head>
         <meta charset="UTF-8">
         <title>MOKEPON 🐾🤺</title>
-        <script src="main.js"></script>
+        <script src="main.js" type="module"></script>
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
     
         <section id="seleccionar_mascota">
-            <h1 class="titulo">MOKEPON!💧🔥🌱</h1>
+            <h1 class="titulo">MOKEPON</h1>
 
-            <h2>Elije a tu mascota: </h2>
-            <h2>esta es una prueba de las ramas</h2>
+            <h2 class="subtitulo">Elije a tu mascota: </h2>
             
-            <label class="tarjeta_de_mokepon" for="hipodoge">Hipodoge</label>
-            <input type="radio" name="mascota" id="hipodoge"/>
-            
-            <label class="tarjeta_de_mokepon" for="capipepo">Capipepo</label>
-            <input type="radio" name="mascota" id="capipepo"/>
-            
-            <label class="tarjeta_de_mokepon" for="ratigueya">Ratigueya</label>
-            <input type="radio" name="mascota" id="ratigueya"/>
+            <div class="tarjetas">
+                <label class="tarjeta_de_mokepon" for="hipodoge">
+                    <p>Hipodoge</p>
+                    <img src="./assets/hipodoge.png" alt="Hipodoge">
+                </label>
+                <input type="radio" name="mascota" id="hipodoge"/>
+                
+                <label class="tarjeta_de_mokepon" for="capipepo">
+                    <p>Capipepo</p>
+                    <img src="./assets/capipepo.png" alt="Capipepo">
+                </label>
+                <input type="radio" name="mascota" id="capipepo"/>
+                
+                <label class="tarjeta_de_mokepon" for="ratigueya">
+                    <p>Ratigueya</p>
+                    <img src="./assets/ratigueya.png" alt="Ratigueya">
+                </label>
+                <input type="radio" name="mascota" id="ratigueya"/>
+            </div>
 
             <button id="boton_mascota">Seleccionar</button>
 
@@ -46,7 +56,9 @@
         </section>
 
         <section id="reiniciar">
-            <button id="boton_reiniciar">Reiniciar</button>
+            <button id="boton_reiniciar">
+                <span id="span_button">Reiniciar</span>
+            </button>
         </section>
 
     </body>

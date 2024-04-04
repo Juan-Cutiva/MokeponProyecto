@@ -1,8 +1,10 @@
-.titulo {
-  color:hotpink;
-  width: 234px;
-  height: 33px;
-  background-color: teal;
+@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap');
+
+body {
+  font-family: "Pixelify Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: weight;
+  font-style: normal;
 }
 
 #seleccionar_mascota{
@@ -11,15 +13,38 @@
   justify-content: center;
   align-items: center;
 }
+.titulo {
+  color:rgb(253, 191, 96);
+  font-size: 45px;
+  margin:  0% 8%;
+}
+
+.subtitulo{
+  font-size: 32px;
+}
+
+.tarjetas{
+  display: flex;
+}
 
 .tarjeta_de_mokepon {
-  width: 100px;
-  height: 100px;
-  background: aquamarine;
+  width: 284px;
+  height: 200px;
+  background:rgb(255, 137, 17);
   padding: 10px;
   box-sizing: border-box;
   margin: 5px;
-  border: 1px solid hotpink;
+  border: 1px solid rgb(80, 114, 123);
+  border-radius: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 20px;
+}
+
+.tarjeta_de_mokepon img{
+  width: 180px;
+
 }
 
 input {
@@ -27,15 +52,21 @@ input {
 }
 
 #boton_mascota{
-  width: 85px;
-  height: 20px;
-  background: rgb(252, 0, 0);
+  font-family: "Pixelify Sans", sans-serif;
+  width: 112px;
+  height: 32px;
+  font-size: 15px;
+  border-radius: 20px;
+  background:rgb(253, 191, 96);
   padding: 1px;
   box-sizing:border-box;
   margin: 5px;
   border: 1px solid black;
+  
 }
+
 #seleccionar_ataque{
+  font-family: "Pixelify Sans", sans-serif;
   display:flex;
   flex-direction: column;
   justify-content: center;
@@ -48,4 +79,17 @@ input {
   justify-content: center;
   align-items:center;
   margin: 1px;
+}
+
+#reiniciar{
+  font-family: "Pixelify Sans", sans-serif;
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items:center;
+  margin: 1px;
+}
+
+body{
+background-color: rgb(127, 39, 255);
 }
