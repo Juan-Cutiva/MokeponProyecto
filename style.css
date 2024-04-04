@@ -35,3 +35,17 @@ input {
   margin: 5px;
   border: 1px solid black;
 }
+#seleccionar_ataque{
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items:center;
+}
+
+#mensajes{
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items:center;
+  margin: 1px;
+}

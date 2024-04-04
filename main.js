@@ -6,7 +6,7 @@ let mascotaEnemigo
 let mascotaJugador
 
 function iniciarJuago(){    
-    let sectionSeleccionarAtaque = document.getElementById("Seleccionar_ataque")
+    let sectionSeleccionarAtaque = document.getElementById("seleccionar_ataque")
     sectionSeleccionarAtaque.style.display="none"
 
     let sectionReiniciar = document.getElementById("reiniciar")
@@ -30,8 +30,8 @@ function seleccionarMascotaJugador(){
     let sectionSeleccionarMascota = document.getElementById("seleccionar_mascota")
     sectionSeleccionarMascota.style.display="none"
 
-    let sectionSeleccionarAtaque = document.getElementById("Seleccionar_ataque")
-    sectionSeleccionarAtaque.style.display="block"
+    let sectionSeleccionarAtaque = document.getElementById("seleccionar_ataque")
+    sectionSeleccionarAtaque.style.display="flex"
     
     let inputHipodoge = document.getElementById("hipodoge")
     let inputCapipepo = document.getElementById("capipepo")
