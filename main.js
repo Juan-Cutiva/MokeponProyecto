@@ -6,9 +6,6 @@ let mascotaEnemigo
 let mascotaJugador
 
 function iniciarJuago(){    
-    let sectionSeleccionarAtaque = document.getElementById("seleccionar_ataque")
-    sectionSeleccionarAtaque.style.display="none"
-
     let sectionReiniciar = document.getElementById("reiniciar")
     sectionReiniciar.style.display="none"
     
