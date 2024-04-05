@@ -133,7 +133,7 @@ input {
 
 .vidas{
   width: 218px;
-  height: 106px;
+  height: 124px;
   border-radius: 20px;
   background-color: rgba(221, 209, 209, 0.219);
   padding: 1px;
@@ -160,6 +160,10 @@ input {
   background-color: rgba(221, 209, 209, 0.219);
   padding: 24px;
   border: 1px solid black;
+}
+
+#vidas_enemigo, #vidas_jugador{
+  font-size: 32px;
 }
 
 #reiniciar{
