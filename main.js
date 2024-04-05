@@ -49,6 +49,7 @@ function seleccionarMascotaJugador(){
         mascotaJugador = "Ratigueya"
     } else{
         alert("Selecciona una mascota")
+        location.reload()
     }
     seleccionarMascotaEnemigo()
     

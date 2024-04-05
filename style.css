@@ -53,14 +53,14 @@ input {
 
 #boton_mascota{
   font-family: "Pixelify Sans", sans-serif;
-  width: 112px;
-  height: 32px;
-  font-size: 15px;
+  width: 164px;
+  height: 44px;
+  font-size: 20px;
   border-radius: 20px;
   background:rgb(253, 191, 96);
   padding: 1px;
   box-sizing:border-box;
-  margin: 5px;
+  margin: 12px;
   border: 1px solid black;
   
 }
