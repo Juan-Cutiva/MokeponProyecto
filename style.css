@@ -96,6 +96,33 @@ input {
   transform: scale(0.9);
 }
 
+.botones_ataques{
+  font-family: "Pixelify Sans", sans-serif;
+  width: 100px;
+  height: 34px;
+  font-size: 18px;
+  border-radius: 20px;
+  background:rgb(253, 191, 96);
+  padding: 1px;
+  box-sizing:border-box;
+  margin: 10px;
+  border: 1px solid black;
+  cursor: pointer;
+  
+}
+.botones_ataques{
+  border-radius: 6px;
+  transition: .3s;
+}
+
+.botones_ataques:hover{
+  background: none;
+  background:rgba(255, 136, 17, 0.76);
+}
+.botones_ataques:active{
+  transform: scale(0.9);
+}
+
 #seleccionar_ataque{
   font-family: "Pixelify Sans", sans-serif;
   display:flex;
@@ -104,9 +131,26 @@ input {
   align-items:center;
 }
 
+.vidas{
+  width: 218px;
+  height: 106px;
+  border-radius: 20px;
+  background-color: rgba(221, 209, 209, 0.219);
+  padding: 1px;
+  box-sizing:border-box;
+  margin: 10px;
+  border: 1px solid black;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+#id_vidas{
+  display: flex;
+}
+
 #mensajes{
   display:flex;
-  flex-direction: column;
+  flex-direction: column-reverse;
   justify-content: center;
   align-items:center;
   margin: 1px;
@@ -123,5 +167,6 @@ input {
 }
 
 body{
+/* background-image:url(./assets/1.jpg); */
 background-color: rgb(127, 39, 255);
 }

@@ -129,14 +129,14 @@ function crearMensaje(resultado){
     parrafoMascotaJugador.innerHTML = "Tu " + mascotaJugador + " atacó con " + ataqueJugador
     
     let parrafoMascotaEnemigo = document.createElement("p")
-    parrafoMascotaEnemigo.innerHTML = mascotaEnemigo+ " del enemigo atacó con " + ataqueEnemigo
+    parrafoMascotaEnemigo.innerHTML = mascotaEnemigo + " del enemigo atacó con " + ataqueEnemigo
 
     let  parrafoResultado = document.createElement("p")
     parrafoResultado.innerHTML = resultado
 
-    sectionMensajes.appendChild(parrafoMascotaJugador)
-    sectionMensajes.appendChild(parrafoMascotaEnemigo)
     sectionMensajes.appendChild(parrafoResultado)
+    sectionMensajes.appendChild(parrafoMascotaEnemigo)
+    sectionMensajes.appendChild(parrafoMascotaJugador)
 }
 
 function crearMensajeFinal(resultadoCombate){
