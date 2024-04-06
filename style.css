@@ -177,6 +177,7 @@ input {
 }
 
 body{
-/* background-image:url(./assets/1.jpg); */
-background-color: rgb(127, 39, 255);
+background-image:url(./assets/5.jpg);
+background-size: 100% auto;
+/* background-color: rgb(127, 39, 255); */
 }
