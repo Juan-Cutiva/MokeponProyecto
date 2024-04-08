@@ -213,8 +213,30 @@ body ::-webkit-scrollbar-thumb {
   background-image: linear-gradient()
 }
 
-@media  (max-width:  560px){
+@media  (max-width:  360px){
+  .titulo {
+    font-size: 30px;
+  }
+  
   .tarjetas{
     flex-direction: column;
+  }
+
+  .vidas{
+    width: 156px;
+    height: 138px;
+  }
+
+  .botones_ataques{
+    width: 90px;
+    height: 38px;
+    margin: 8px;
+  }
+
+  #caja_mensajes{
+
+    width: 340px;
+    height: 250px;
+    padding: 12px;
   }
 }
