@@ -134,9 +134,17 @@ function crearMensaje(resultado){
     let  parrafoResultado = document.createElement("p")
     parrafoResultado.innerHTML = resultado
 
+    let separacion =  document.createElement("p")
+    separacion.innerHTML = "--------------------------------------------"
+
+    let separacion2 =  document.createElement("p")
+    separacion2.innerHTML = "--------------------------------------------"
+
+    sectionMensajes.appendChild(separacion2)
     sectionMensajes.appendChild(parrafoResultado)
     sectionMensajes.appendChild(parrafoMascotaEnemigo)
     sectionMensajes.appendChild(parrafoMascotaJugador)
+    sectionMensajes.appendChild(separacion)
 
     let mostrarCajaMensajes = document.getElementById("caja_mensajes")
     mostrarCajaMensajes.style.display="revert"

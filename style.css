@@ -150,7 +150,7 @@ input {
 
 #caja_mensajes{
   margin: 8px;
-  width: auto;
+  width: 350px;
   height: 238px;
   border-radius: 20px;
   background-color: rgba(221, 209, 209, 0.219);
@@ -166,7 +166,15 @@ input {
 #caja_mensajes::-webkit-scrollbar-thumb {
   background: rgba(255, 255, 255, 0.2);
   border-radius: 20px;
-  background-image: linear-gradient()
+  background-image: linear-gradient();
+}
+
+#caja_mensajes::-webkit-scrollbar-button:vertical:increment{
+  height:25px;
+}
+
+#caja_mensajes::-webkit-scrollbar-button:vertical:decrement{
+  height:25px;
 }
 
 #mensajes{
@@ -193,6 +201,16 @@ body{
 background-image:url(./assets/5.jpg);
 background-size: 100% auto;
 /* background-color: rgb(127, 39, 255); */
+}
+
+body ::-webkit-scrollbar{
+  width: 7px;
+}
+
+body ::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+  background-image: linear-gradient()
 }
 
 @media  (max-width:  560px){
