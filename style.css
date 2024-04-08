@@ -148,18 +148,32 @@ input {
   display: flex;
 }
 
+#caja_mensajes{
+  margin: 8px;
+  width: auto;
+  height: 238px;
+  border-radius: 20px;
+  background-color: rgba(221, 209, 209, 0.219);
+  padding: 24px;
+  border: 1px solid black;
+  overflow-y:scroll;
+}
+
+#caja_mensajes::-webkit-scrollbar{
+    width: 7px;
+}
+
+#caja_mensajes::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+  background-image: linear-gradient()
+}
+
 #mensajes{
   display:flex;
   flex-direction: column-reverse;
   justify-content: center;
   align-items:center;
-  margin: 8px;
-  width: auto;
-  height: auto;
-  border-radius: 20px;
-  background-color: rgba(221, 209, 209, 0.219);
-  padding: 24px;
-  border: 1px solid black;
 }
 
 #vidas_enemigo, #vidas_jugador{
