@@ -137,6 +137,9 @@ function crearMensaje(resultado){
     sectionMensajes.appendChild(parrafoResultado)
     sectionMensajes.appendChild(parrafoMascotaEnemigo)
     sectionMensajes.appendChild(parrafoMascotaJugador)
+
+    let mostrarCajaMensajes = document.getElementById("caja_mensajes")
+    mostrarCajaMensajes.style.display="revert"
 }
 
 function crearMensajeFinal(resultadoCombate){

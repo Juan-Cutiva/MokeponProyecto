@@ -186,7 +186,6 @@ input {
   flex-direction: column;
   justify-content: center;
   align-items:center;
-  margin: 8px;
   cursor: pointer;
 }
 
@@ -194,4 +193,10 @@ body{
 background-image:url(./assets/5.jpg);
 background-size: 100% auto;
 /* background-color: rgb(127, 39, 255); */
+}
+
+@media  (max-width:  560px){
+  .tarjetas{
+    flex-direction: column;
+  }
 }
