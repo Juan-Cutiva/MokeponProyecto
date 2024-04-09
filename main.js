@@ -28,12 +28,50 @@ const mostrarCajaMensajes = document.getElementById("caja_mensajes")
 //crearMensajeFinal
 //variables repetidas
 
+let mokepones = []
 let ataqueJugador
 let ataqueEnemigo
 let vidasJugador = 3
 let vidasEnemigo = 3
 let mascotaEnemigo
 let mascotaJugador
+
+class Mokepom {
+    constructor(nombre, foto, vida){
+        this.nombre = nombre
+        this.foto =  foto
+        this.vida = vida
+        this.ataques=[]
+    }
+}
+
+let hipodoge = new Mokepom("Hipodoge", "./assets/hipodoge.png", 5) 
+
+let capipepo = new Mokepom("Capipepo", "./assets/capipepo.png", 5) 
+
+let ratigueya = new Mokepom("Ratigueya", "./assets/ratigueya.png", 5) 
+
+hipodoge.ataques.push(
+    {nombre: "💧", id: "boton_agua"},
+    {nombre: "💧", id: "boton_agua"},
+    {nombre: "💧", id: "boton_agua"},
+    {nombre: "🔥", id: "boton_fuego"},
+    {nombre: "🌱", id: "boton_tierra"},
+)
+capipepo.ataques.push(
+    {nombre: "🌱", id: "boton_tierra"},
+    {nombre: "🌱", id: "boton_tierra"},
+    {nombre: "🌱", id: "boton_tierra"},
+    {nombre: "🔥", id: "boton_fuego"},
+    {nombre: "💧", id: "boton_agua"},
+)
+ratigueya.ataques.push(
+    {nombre: "🔥", id: "boton_fuego"},
+    {nombre: "🔥", id: "boton_fuego"},
+    {nombre: "🔥", id: "boton_fuego"},
+    {nombre: "💧", id: "boton_agua"},
+    {nombre: "🌱", id: "boton_tierra"},
+)
 
 function iniciarJuego(){    
     sectionReiniciar.style.display="none"
