@@ -60,6 +60,10 @@ label{
   transform: scale(0.9);
 }
 
+input:checked + label{
+  background:rgba(255, 136, 17, 0.76);
+}
+
 .tarjeta_de_mokepon img{
   width: 180px;
 }
@@ -210,7 +214,7 @@ body ::-webkit-scrollbar-thumb {
   background-image: linear-gradient()
 }
 
-@media  (max-width:  460px){
+@media  (max-width:  660px){
   .titulo {
     font-size: 30px;
   }
