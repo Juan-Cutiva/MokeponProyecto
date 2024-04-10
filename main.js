@@ -28,9 +28,12 @@ const mostrarCajaMensajes = document.getElementById("caja_mensajes")
 //crearMensajeFinal
 //variables repetidas
 
+const contenedorTarjetas = document.getElementById("contenedor_tarjetas")
+
 let mokepones = []
 let ataqueJugador
 let ataqueEnemigo
+let opcionDeMokepones
 let vidasJugador = 3
 let vidasEnemigo = 3
 let mascotaEnemigo
@@ -73,8 +76,23 @@ ratigueya.ataques.push(
     {nombre: "🌱", id: "boton_tierra"},
 )
 
+mokepones.push(hipodoge, capipepo, ratigueya)
+
 function iniciarJuego(){    
     sectionReiniciar.style.display="none"
+
+    mokepones.forEach((mokepon)=>{
+        opcionDeMokepones = `
+        <input type="radio" name="mascota" id="${mokepon.nombre}"/>
+        <label class="tarjeta_de_mokepon" for="${mokepon.nombre}">
+            <p>${mokepon.nombre}</p>
+            <img src="${mokepon.foto}" alt="${mokepon.nombre}">
+        </label>
+        `
+    
+    contenedorTarjetas.innerHTML += opcionDeMokepones
+    })
+
 
     botonMascotaJugador.addEventListener("click", seleccionarMascotaJugador)
 
