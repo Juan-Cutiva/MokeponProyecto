@@ -115,13 +115,13 @@ function seleccionarMascotaJugador(){
     sectionSeleccionarAtaque.style.display="flex"
 
     if(inputHipodoge.checked){
-        spanMascotaJugador.innerHTML = "Hipodoge"
+        spanMascotaJugador.innerHTML = inputHipodoge.id
         mascotaJugador = "Hipodoge"
     } else if(inputCapipepo.checked){
-        spanMascotaJugador.innerHTML = "Capipepo"
+        spanMascotaJugador.innerHTML = inputCapipepo.id
         mascotaJugador = "Capipepo"
     } else if(inputRatigueya.checked){
-        spanMascotaJugador.innerHTML = "Ratigueya"
+        spanMascotaJugador.innerHTML = inputRatigueya.id
         mascotaJugador = "Ratigueya"
     } else{
         alert("Selecciona una mascota")
@@ -134,7 +134,7 @@ function seleccionarMascotaEnemigo(){
     let mascotaAleatoria = aleatorio(1,3)
 
     if (mascotaAleatoria == 1){
-        spanMascotaEnemigo.innerHTML = "Hipodogue"
+        spanMascotaEnemigo.innerHTML = "Hipodoge"
         mascotaEnemigo = "Hipodoge"
     } else if (mascotaAleatoria == 2){
         spanMascotaEnemigo.innerHTML = "Capipepo"
@@ -157,7 +157,7 @@ function ataqueTierra(){
     ataqueJugador = "TIERRA🌱"
     ataqueAleatorioEnemigo()
 }
-//prueba ramas 
+
 function ataqueAleatorioEnemigo(){
     let ataqueAleatorio = aleatorio(1,3)
     
