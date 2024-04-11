@@ -157,7 +157,7 @@ function ataqueTierra(){
     ataqueJugador = "TIERRA🌱"
     ataqueAleatorioEnemigo()
 }
-//prueba ramas 1
+//prueba ramas 
 function ataqueAleatorioEnemigo(){
     let ataqueAleatorio = aleatorio(1,3)
     
