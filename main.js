@@ -9,9 +9,6 @@ const botonReiniciar = document.getElementById("boton_reiniciar")
 //seleccionarMascotaJugador
 const sectionSeleccionarMascota = document.getElementById("seleccionar_mascota")
 const sectionSeleccionarAtaque = document.getElementById("seleccionar_ataque")
-const inputHipodoge = document.getElementById("hipodoge")
-const inputCapipepo = document.getElementById("capipepo")
-const inputRatigueya = document.getElementById("ratigueya")
 const spanMascotaJugador = document.getElementById("mascota_jugador")
 
 //seleccionarMascotaEnemigo
@@ -34,6 +31,9 @@ let mokepones = []
 let ataqueJugador
 let ataqueEnemigo
 let opcionDeMokepones
+let inputCapipepo
+let inputHipodoge
+let inputRatigueya
 let vidasJugador = 3
 let vidasEnemigo = 3
 let mascotaEnemigo
@@ -83,7 +83,7 @@ function iniciarJuego(){
 
     mokepones.forEach((mokepon)=>{
         opcionDeMokepones = `
-        <input type="radio" name="mascota" id="${mokepon.nombre}"/>
+        <input type="radio" name="mascota" id="${mokepon.nombre}" />
         <label class="tarjeta_de_mokepon" for="${mokepon.nombre}">
             <p>${mokepon.nombre}</p>
             <img src="${mokepon.foto}" alt="${mokepon.nombre}">
@@ -91,6 +91,10 @@ function iniciarJuego(){
         `
     
     contenedorTarjetas.innerHTML += opcionDeMokepones
+
+    inputCapipepo = document.getElementById("Capipepo")
+    inputHipodoge = document.getElementById("Hipodoge")
+    inputRatigueya = document.getElementById("Ratigueya")
     })
 
 
