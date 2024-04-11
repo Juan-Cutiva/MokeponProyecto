@@ -131,18 +131,9 @@ function seleccionarMascotaJugador(){
 }
 
 function seleccionarMascotaEnemigo(){
-    let mascotaAleatoria = aleatorio(1,3)
+    let mascotaAleatoria = aleatorio(0,mokepones.length -1)
 
-    if (mascotaAleatoria == 1){
-        spanMascotaEnemigo.innerHTML = "Hipodoge"
-        mascotaEnemigo = "Hipodoge"
-    } else if (mascotaAleatoria == 2){
-        spanMascotaEnemigo.innerHTML = "Capipepo"
-        mascotaEnemigo = "Capipepo"
-    } else {
-        spanMascotaEnemigo.innerHTML ="Ratigueya"
-        mascotaEnemigo = "Ratigueya"
-    }
+    spanMascotaEnemigo.innerHTML = mokepones[mascotaAleatoria].nombre
 }
 
 function ataqueFuego(){
@@ -201,7 +192,7 @@ function crearMensaje(resultado){
     parrafoMascotaJugador.innerHTML = "Tu " + mascotaJugador + " atacó con " + ataqueJugador
     
     let parrafoMascotaEnemigo = document.createElement("p")
-    parrafoMascotaEnemigo.innerHTML = mascotaEnemigo + " del enemigo atacó con " + ataqueEnemigo
+    parrafoMascotaEnemigo.innerHTML = spanMascotaEnemigo.innerHTML + " del enemigo atacó con " + ataqueEnemigo
 
     let  parrafoResultado = document.createElement("p")
     parrafoResultado.innerHTML = resultado
