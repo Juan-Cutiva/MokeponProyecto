@@ -157,7 +157,7 @@ function ataqueTierra(){
     ataqueJugador = "TIERRA🌱"
     ataqueAleatorioEnemigo()
 }
-k
+
 function ataqueAleatorioEnemigo(){
     let ataqueAleatorio = aleatorio(1,3)
     
