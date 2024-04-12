@@ -1,9 +1,6 @@
 //iniciarJuego
 const sectionReiniciar = document.getElementById("reiniciar")
 const botonMascotaJugador = document.getElementById("boton_mascota") 
-const botonFuego = document.getElementById("boton_fuego")
-const botonAgua  = document.getElementById("boton_agua")
-const botonTierra = document.getElementById("boton_tierra")
 const botonReiniciar = document.getElementById("boton_reiniciar")
 
 //seleccionarMascotaJugador
@@ -26,6 +23,7 @@ const mostrarCajaMensajes = document.getElementById("caja_mensajes")
 //variables repetidas
 
 const contenedorTarjetas = document.getElementById("contenedor_tarjetas")
+const contenedorAtaques = document.getElementById("contenedor_ataques")
 
 let mokepones = []
 let ataqueJugador
@@ -36,6 +34,10 @@ let inputHipodoge
 let inputRatigueya
 let vidasJugador = 3
 let vidasEnemigo = 3
+let ataquesMokepon
+let botonFuego
+let botonAgua
+let botonTierra
 let mascotaEnemigo
 let mascotaJugador
 
@@ -55,25 +57,25 @@ let capipepo = new Mokepom("Capipepo", "./assets/capipepo.png", 5)
 let ratigueya = new Mokepom("Ratigueya", "./assets/ratigueya.png", 5) 
 
 hipodoge.ataques.push(
-    {nombre: "💧", id: "boton_agua"},
-    {nombre: "💧", id: "boton_agua"},
-    {nombre: "💧", id: "boton_agua"},
-    {nombre: "🔥", id: "boton_fuego"},
-    {nombre: "🌱", id: "boton_tierra"},
+    {nombre: "AGUA💧", id: "boton_agua"},
+    {nombre: "AGUA💧", id: "boton_agua"},
+    {nombre: "AGUA💧", id: "boton_agua"},
+    {nombre: "FUEGO🔥", id: "boton_fuego"},
+    {nombre: "TIERRA🌱", id: "boton_tierra"},
 )
 capipepo.ataques.push(
-    {nombre: "🌱", id: "boton_tierra"},
-    {nombre: "🌱", id: "boton_tierra"},
-    {nombre: "🌱", id: "boton_tierra"},
-    {nombre: "🔥", id: "boton_fuego"},
-    {nombre: "💧", id: "boton_agua"},
+    {nombre: "TIERRA🌱", id: "boton_tierra"},
+    {nombre: "TIERRA🌱", id: "boton_tierra"},
+    {nombre: "TIERRA🌱", id: "boton_tierra"},
+    {nombre: "FUEGO🔥", id: "boton_fuego"},
+    {nombre: "AGUA💧", id: "boton_agua"},
 )
 ratigueya.ataques.push(
-    {nombre: "🔥", id: "boton_fuego"},
-    {nombre: "🔥", id: "boton_fuego"},
-    {nombre: "🔥", id: "boton_fuego"},
-    {nombre: "💧", id: "boton_agua"},
-    {nombre: "🌱", id: "boton_tierra"},
+    {nombre: "FUEGO🔥", id: "boton_fuego"},
+    {nombre: "FUEGO🔥", id: "boton_fuego"},
+    {nombre: "FUEGO🔥", id: "boton_fuego"},
+    {nombre: "AGUA💧", id: "boton_agua"},
+    {nombre: "TIERRA🌱", id: "boton_tierra"},
 )
 
 mokepones.push(hipodoge, capipepo, ratigueya)
@@ -99,12 +101,6 @@ function iniciarJuego(){
 
 
     botonMascotaJugador.addEventListener("click", seleccionarMascotaJugador)
-
-    botonFuego.addEventListener("click", ataqueFuego)
-
-    botonAgua.addEventListener("click", ataqueAgua)
-
-    botonTierra.addEventListener("click", ataqueTierra)
 
     botonReiniciar.addEventListener("click", reiniciarJuego)
 }
@@ -140,6 +136,21 @@ function extraerAtaques(mascotaJugador){
         }
     }
     mostrarAtaques(ataques)
+}
+
+function mostrarAtaques(ataques){
+    ataques.forEach((ataque) =>{
+        ataquesMokepon = `<button class="botones_ataques" id=${ataque.id}>${ataque.nombre}</button>`
+        contenedorAtaques.innerHTML += ataquesMokepon
+
+    }) 
+    botonFuego = document.getElementById("boton_fuego")
+    botonAgua  = document.getElementById("boton_agua")
+    botonTierra = document.getElementById("boton_tierra")
+
+    botonFuego.addEventListener("click", ataqueFuego)
+    botonAgua.addEventListener("click", ataqueAgua)
+    botonTierra.addEventListener("click", ataqueTierra)
 }
 
 function seleccionarMascotaEnemigo(){
