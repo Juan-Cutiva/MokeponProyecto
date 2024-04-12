@@ -116,18 +116,24 @@ function seleccionarMascotaJugador(){
 
     if(inputHipodoge.checked){
         spanMascotaJugador.innerHTML = inputHipodoge.id
-        mascotaJugador = "Hipodoge"
+        mascotaJugador = inputHipodoge.id
     } else if(inputCapipepo.checked){
         spanMascotaJugador.innerHTML = inputCapipepo.id
-        mascotaJugador = "Capipepo"
+        mascotaJugador = inputCapipepo.id
     } else if(inputRatigueya.checked){
         spanMascotaJugador.innerHTML = inputRatigueya.id
-        mascotaJugador = "Ratigueya"
+        mascotaJugador = inputRatigueya.id
     } else{
         alert("Selecciona una mascota")
         location.reload()
     }
+
+    extraerAtaques(mascotaJugador)
     seleccionarMascotaEnemigo()
+}
+
+function extraerAtaques(){
+    
 }
 
 function seleccionarMascotaEnemigo(){
