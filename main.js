@@ -34,6 +34,8 @@ let inputHipodoge
 let inputRatigueya
 let vidasJugador = 3
 let vidasEnemigo = 3
+let victoriasJugador = 0
+let victoriasEnemigo = 0
 let ataquesMokepon
 let ataquesMokeponEnemigo
 let botonFuego
@@ -209,29 +211,28 @@ function combate(){
         if(ataqueJugador[i] === ataqueEnemigo[i]){
             iAmbosOponentes(i, i)
             crearMensaje("EMPATE")
+        } else if(ataqueJugador[i] == "FUEGO🔥" && ataqueEnemigo[i] == "TIERRA🌱" || ataqueJugador[i] == "AGUA💧" && ataqueEnemigo[i] == "FUEGO🔥" || ataqueJugador[i] == "TIERRA🌱" && ataqueEnemigo[i] == "AGUA💧"){
+            iAmbosOponentes(i, i)
+            crearMensaje("GANASTE")
+            victoriasJugador++
+            spanVidasJugador.innerHTML = victoriasJugador
+        } else {
+            iAmbosOponentes(i, i)
+            crearMensaje("PERDISTE")
+            victoriasEnemigo++
+            spanVidasEnemigo.innerHTML = victoriasEnemigo
         }
         
     }
-    
-    if(ataqueEnemigo == ataqueJugador){
-        crearMensaje("EMPATE")
-    } else if(ataqueJugador == "FUEGO🔥" && ataqueEnemigo == "TIERRA🌱" || ataqueJugador == "AGUA💧" && ataqueEnemigo == "FUEGO🔥" || ataqueJugador == "TIERRA🌱" && ataqueEnemigo == "AGUA💧"){
-        crearMensaje("GANASTE")
-        vidasEnemigo--
-        spanVidasEnemigo.innerHTML = vidasEnemigo
-    } else {
-        crearMensaje("PERDISTE")
-        vidasJugador--
-        spanVidasJugador.innerHTML = vidasJugador
-    }
-
     revisarVidas()
 }
 
 function revisarVidas(){
-    if(vidasEnemigo <= 0){
+    if(victoriasEnemigo === victoriasJugador){
+        crearMensajeFinal("Empate")
+    }else if(victoriasJugador > victoriasEnemigo){
         crearMensajeFinal("¡Has ganado el juego!")
-    } else if(vidasJugador <= 0){
+    } else{
         crearMensajeFinal( "¡Perdiste el juego!")
     }
 }
@@ -259,6 +260,8 @@ function crearMensaje(resultado){
     sectionMensajes.appendChild(separacion)
 
     mostrarCajaMensajes.style.display="revert"
+    
+    sectionReiniciar.style.display="flex"
 }
 
 function crearMensajeFinal(resultadoCombate){
@@ -269,8 +272,7 @@ function crearMensajeFinal(resultadoCombate){
     botonAgua.disabled = true
 
     botonTierra.disabled = true
-
-    sectionReiniciar.style.display="flex"
+    botones.disabled=true
 }
 
 function reiniciarJuego(){
