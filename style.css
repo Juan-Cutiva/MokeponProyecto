@@ -91,6 +91,14 @@ input {
   transition: .3s;
 }
 
+#botonMover{
+  font-family: "Pixelify Sans", sans-serif;
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items:center;
+}
+
 #boton_mascota:hover{
   background:rgba(255, 136, 17, 0.76);
 }
@@ -212,6 +220,16 @@ body ::-webkit-scrollbar-thumb {
   background: rgba(255, 255, 255, 0.2);
   border-radius: 20px;
   background-image: linear-gradient()
+}
+
+#ver_mapa{
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#mapa{
+  border: 2px solid rgb(0, 0, 0);
 }
 
 @media  (max-width:  660px){

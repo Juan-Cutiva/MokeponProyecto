@@ -19,11 +19,11 @@ const spanVidasEnemigo = document.getElementById("vidas_enemigo")
 const sectionMensajes = document.getElementById("mensajes")
 const mostrarCajaMensajes = document.getElementById("caja_mensajes")
 
-//crearMensajeFinal
-//variables repetidas
-
 const contenedorTarjetas = document.getElementById("contenedor_tarjetas")
 const contenedorAtaques = document.getElementById("contenedor_ataques")
+
+const sectionVerMapa = document.getElementById("ver_mapa")
+const mapa = document.getElementById("mapa")
 
 let mokepones = []
 let ataqueJugador = []
@@ -46,6 +46,7 @@ let indexAtaqueJugador
 let indexAtaqueEnemigo
 let mascotaEnemigo
 let mascotaJugador
+let lienzo = mapa.getContext("2d")
 
 class Mokepom {
     constructor(nombre, foto, vida){
@@ -53,6 +54,12 @@ class Mokepom {
         this.foto =  foto
         this.vida = vida
         this.ataques=[]
+        this.x=20
+        this.y=30
+        this.ancho=80
+        this.alto=80
+        this.mapaFoto = new Image()
+        this.mapaFoto.src = foto
     }
 }
 
@@ -88,6 +95,7 @@ mokepones.push(hipodoge, capipepo, ratigueya)
 
 function iniciarJuego(){    
     sectionReiniciar.style.display="none"
+    sectionVerMapa.style.display="none"
 
     mokepones.forEach((mokepon)=>{
         opcionDeMokepones = `
@@ -114,7 +122,9 @@ function iniciarJuego(){
 function seleccionarMascotaJugador(){
     sectionSeleccionarMascota.style.display="none"
 
-    sectionSeleccionarAtaque.style.display="flex"
+    //sectionSeleccionarAtaque.style.display="flex"
+    //#region Lienzo
+    sectionVerMapa.style.display="flex"
 
     if(inputHipodoge.checked){
         spanMascotaJugador.innerHTML = inputHipodoge.id
@@ -279,6 +289,22 @@ function reiniciarJuego(){
 
 function aleatorio(min, max){
     return Math.floor(Math.random() * (max - min + 1) + min)
+}
+
+function pintarPersonaje(){
+    lienzo.clearRect(0, 0, mapa.width, mapa.height)
+    lienzo.drawImage(
+        capipepo.mapaFoto,
+        capipepo.x,
+        capipepo.y,
+        capipepo.ancho, 
+        capipepo.alto,
+    )    
+}
+
+function moverCapipepo(){
+    capipepo.x = capipepo.x + 5
+    pintarPersonaje()
 }
 
 window.addEventListener("load",iniciarJuego)
