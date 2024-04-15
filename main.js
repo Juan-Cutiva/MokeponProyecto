@@ -26,8 +26,8 @@ const contenedorTarjetas = document.getElementById("contenedor_tarjetas")
 const contenedorAtaques = document.getElementById("contenedor_ataques")
 
 let mokepones = []
-let ataqueJugador
-let ataqueEnemigo
+let ataqueJugador = []
+let ataqueEnemigo = []
 let opcionDeMokepones
 let inputCapipepo
 let inputHipodoge
@@ -35,9 +35,13 @@ let inputRatigueya
 let vidasJugador = 3
 let vidasEnemigo = 3
 let ataquesMokepon
+let ataquesMokeponEnemigo
 let botonFuego
 let botonAgua
 let botonTierra
+let botones = []
+let indexAtaqueJugador
+let indexAtaqueEnemigo
 let mascotaEnemigo
 let mascotaJugador
 
@@ -140,53 +144,75 @@ function extraerAtaques(mascotaJugador){
 
 function mostrarAtaques(ataques){
     ataques.forEach((ataque) =>{
-        ataquesMokepon = `<button class="botones_ataques" id=${ataque.id}>${ataque.nombre}</button>`
+        ataquesMokepon = `<button class="botones_ataques BAtaque" id=${ataque.id}>${ataque.nombre}</button>`
         contenedorAtaques.innerHTML += ataquesMokepon
 
     }) 
     botonFuego = document.getElementById("boton_fuego")
     botonAgua  = document.getElementById("boton_agua")
     botonTierra = document.getElementById("boton_tierra")
+    botones = document.querySelectorAll(".BAtaque")
+}
 
-    botonFuego.addEventListener("click", ataqueFuego)
-    botonAgua.addEventListener("click", ataqueAgua)
-    botonTierra.addEventListener("click", ataqueTierra)
+function secuenciaAtaque(){
+    botones.forEach((boton) => {
+        boton.addEventListener("click", (e) =>{
+            if(e.target.textContent === "FUEGO🔥"){
+                ataqueJugador.push("FUEGO🔥")
+                boton.style.background = "rgba(255, 136, 17, 0.76)"
+            } else if(e.target.textContent ==="AGUA💧"){
+                ataqueJugador.push("AGUA💧")
+                boton.style.background = "rgba(255, 136, 17, 0.76)"
+            } else if(e.target.textContent ==="TIERRA🌱"){
+                ataqueJugador.push("TIERRA🌱")
+                boton.style.background = "rgba(255, 136, 17, 0.76)"
+            }
+            ataqueAleatorioEnemigo()
+        })
+    })
 }
 
 function seleccionarMascotaEnemigo(){
     let mascotaAleatoria = aleatorio(0,mokepones.length -1)
 
     spanMascotaEnemigo.innerHTML = mokepones[mascotaAleatoria].nombre
-}
-
-function ataqueFuego(){
-    ataqueJugador = "FUEGO🔥"
-    ataqueAleatorioEnemigo()   
-}
-function ataqueAgua(){
-    ataqueJugador = "AGUA💧"
-    ataqueAleatorioEnemigo()
-}
-function ataqueTierra(){
-    ataqueJugador = "TIERRA🌱"
-    ataqueAleatorioEnemigo()
+    ataquesMokeponEnemigo = mokepones[mascotaAleatoria].ataques
+    secuenciaAtaque()
 }
 
 function ataqueAleatorioEnemigo(){
-    let ataqueAleatorio = aleatorio(1,3)
+    let ataqueAleatorio = aleatorio(0,ataquesMokeponEnemigo.length -1)
     
-    if(ataqueAleatorio == 1){
-        ataqueEnemigo = "FUEGO🔥"
-    } else if (ataqueAleatorio == 2){
-        ataqueEnemigo = "AGUA💧"
+    if(ataqueAleatorio == 0||ataqueAleatorio == 1){
+        ataqueEnemigo.push("FUEGO🔥")
+    } else if (ataqueAleatorio == 3 || ataqueAleatorio == 4){
+        ataqueEnemigo.push("AGUA💧")
     } else {
-        ataqueEnemigo = "TIERRA🌱"
+        ataqueEnemigo.push("TIERRA🌱")
     }
+    iniciarPelea()
+}
+function iniciarPelea(){
+    if (ataqueJugador.length === 5){
+        combate()
+    }
+}
 
-    combate()
+function iAmbosOponentes(jugador, enemigo){
+    indexAtaqueJugador = ataqueJugador[jugador]
+    indexAtaqueEnemigo = ataqueEnemigo[enemigo]
 }
 
 function combate(){
+    
+    for (let i = 0; i < ataqueJugador.length; i++) {
+        if(ataqueJugador[i] === ataqueEnemigo[i]){
+            iAmbosOponentes(i, i)
+            crearMensaje("EMPATE")
+        }
+        
+    }
+    
     if(ataqueEnemigo == ataqueJugador){
         crearMensaje("EMPATE")
     } else if(ataqueJugador == "FUEGO🔥" && ataqueEnemigo == "TIERRA🌱" || ataqueJugador == "AGUA💧" && ataqueEnemigo == "FUEGO🔥" || ataqueJugador == "TIERRA🌱" && ataqueEnemigo == "AGUA💧"){
@@ -212,10 +238,10 @@ function revisarVidas(){
 
 function crearMensaje(resultado){
     let parrafoMascotaJugador = document.createElement("p")
-    parrafoMascotaJugador.innerHTML = "Tu " + mascotaJugador + " atacó con " + ataqueJugador
+    parrafoMascotaJugador.innerHTML = "Tu " + mascotaJugador + " atacó con " + indexAtaqueJugador
     
     let parrafoMascotaEnemigo = document.createElement("p")
-    parrafoMascotaEnemigo.innerHTML = spanMascotaEnemigo.innerHTML + " del enemigo atacó con " + ataqueEnemigo
+    parrafoMascotaEnemigo.innerHTML = spanMascotaEnemigo.innerHTML + " del enemigo atacó con " + indexAtaqueEnemigo
 
     let  parrafoResultado = document.createElement("p")
     parrafoResultado.innerHTML = resultado
