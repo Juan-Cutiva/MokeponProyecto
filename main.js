@@ -162,12 +162,15 @@ function secuenciaAtaque(){
             if(e.target.textContent === "FUEGO🔥"){
                 ataqueJugador.push("FUEGO🔥")
                 boton.style.background = "rgba(255, 136, 17, 0.76)"
+                boton.disabled = true
             } else if(e.target.textContent ==="AGUA💧"){
                 ataqueJugador.push("AGUA💧")
                 boton.style.background = "rgba(255, 136, 17, 0.76)"
+                boton.disabled = true
             } else if(e.target.textContent ==="TIERRA🌱"){
                 ataqueJugador.push("TIERRA🌱")
                 boton.style.background = "rgba(255, 136, 17, 0.76)"
+                boton.disabled = true
             }
             ataqueAleatorioEnemigo()
         })
@@ -267,12 +270,7 @@ function crearMensaje(resultado){
 function crearMensajeFinal(resultadoCombate){
     alert(resultadoCombate)
 
-    botonFuego.disabled = true
-
-    botonAgua.disabled = true
-
-    botonTierra.disabled = true
-    botones.disabled=true
+    deshabilitarBotonesAtaque()
 }
 
 function reiniciarJuego(){
