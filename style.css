@@ -56,6 +56,7 @@ label{
   background: none;
   background:rgba(255, 136, 17, 0.76);
 }
+
 .tarjeta_de_mokepon:active{
   transform: scale(0.9);
 }
@@ -86,17 +87,41 @@ input {
   cursor: pointer;
   
 }
-#boton_mascota{
-  border-radius: 6px;
+
+.botones_movimiento{
+  width: 134px;
+  height: 40px;
+  font-size: 20px;
+  border-radius: 20px;
+  background: #F2AFEF;
+  padding: 1px;
+  box-sizing:border-box;
+  margin: 10px;
+  border: 1px solid black;
+  cursor: pointer;
   transition: .3s;
 }
 
-#botonMover{
+.botones_movimiento:hover {
+  background: none;
+  background:#f2afefce;
+}
+
+.botones_movimiento:active{
+  transform: scale(0.9);
+}
+
+#boton_mover{
   font-family: "Pixelify Sans", sans-serif;
   display:flex;
   flex-direction: column;
   justify-content: center;
   align-items:center;
+}
+
+#boton_mascota{
+  border-radius: 6px;
+  transition: .3s;
 }
 
 #boton_mascota:hover{
