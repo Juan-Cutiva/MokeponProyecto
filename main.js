@@ -51,17 +51,29 @@ let lienzo = mapa.getContext("2d")
 let intervalo
 let mapaBackground = new Image()
 mapaBackground.src = "./assets/mokemap.png"
+let alturaQueBuscamos
+let anchoDelMapa = window.innerWidth -20
+
+const anchoMaximoDelMapa = 700
+    if (anchoDelMapa > anchoMaximoDelMapa){
+        anchoDelMapa = anchoMaximoDelMapa -20
+    }
+
+alturaQueBuscamos = anchoDelMapa * 600/800
+
+mapa.width = anchoDelMapa
+mapa.height = alturaQueBuscamos 
 
 class Mokepom {
-    constructor(nombre, foto, vida, fotoMapa, x = 10, y = 10){
+    constructor(nombre, foto, vida, fotoMapa){
         this.nombre = nombre
         this.foto =  foto
         this.vida = vida
         this.ataques=[]
-        this.x= x
-        this.y= y
         this.ancho=60
         this.alto=60
+        this.x= aleatorio(0, mapa.width - this.ancho)
+        this.y= aleatorio(0, mapa.height - this.alto)
         this.mapaFoto = new Image()
         this.mapaFoto.src = fotoMapa
         this.velocidadX = 0
@@ -85,11 +97,11 @@ let capipepo = new Mokepom("Capipepo", "./assets/capipepo.png", 5,"./assets/capi
 
 let ratigueya = new Mokepom("Ratigueya", "./assets/ratigueya.png", 5,"./assets/ratigueya_mini.png") 
 
-let hipodogeEnemigo = new Mokepom("Hipodoge", "./assets/hipodoge.png", 5,"./assets/hipodoge_mini.png", 80, 120) 
+let hipodogeEnemigo = new Mokepom("Hipodoge", "./assets/hipodoge.png", 5,"./assets/hipodoge_mini.png") 
 
-let capipepoEnemigo = new Mokepom("Capipepo", "./assets/capipepo.png", 5,"./assets/capipepo_mini.png", 150, 95) 
+let capipepoEnemigo = new Mokepom("Capipepo", "./assets/capipepo.png", 5,"./assets/capipepo_mini.png") 
 
-let ratigueyaEnemigo = new Mokepom("Ratigueya", "./assets/ratigueya.png", 5,"./assets/ratigueya_mini.png", 200, 190) 
+let ratigueyaEnemigo = new Mokepom("Ratigueya", "./assets/ratigueya.png", 5,"./assets/ratigueya_mini.png") 
 
 hipodoge.ataques.push(
     {nombre: "AGUA💧", id: "boton_agua"},
@@ -414,8 +426,6 @@ function teclaPresionada(event){
 }
 
 function iniciarMapa(){
-    mapa.width = 500
-    mapa.height = 420
     mascotaJugadorObjeto = obtenerObjetoMascota(mascotaJugador)
     intervalo = setInterval(pintarCanvas, 50)
     
