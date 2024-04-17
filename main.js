@@ -113,6 +113,28 @@ ratigueya.ataques.push(
     {nombre: "TIERRA🌱", id: "boton_tierra"},
 )
 
+hipodogeEnemigo.ataques.push(
+    {nombre: "AGUA💧", id: "boton_agua"},
+    {nombre: "AGUA💧", id: "boton_agua"},
+    {nombre: "AGUA💧", id: "boton_agua"},
+    {nombre: "FUEGO🔥", id: "boton_fuego"},
+    {nombre: "TIERRA🌱", id: "boton_tierra"},
+)
+capipepoEnemigo.ataques.push(
+    {nombre: "TIERRA🌱", id: "boton_tierra"},
+    {nombre: "TIERRA🌱", id: "boton_tierra"},
+    {nombre: "TIERRA🌱", id: "boton_tierra"},
+    {nombre: "FUEGO🔥", id: "boton_fuego"},
+    {nombre: "AGUA💧", id: "boton_agua"},
+)
+ratigueyaEnemigo.ataques.push(
+    {nombre: "FUEGO🔥", id: "boton_fuego"},
+    {nombre: "FUEGO🔥", id: "boton_fuego"},
+    {nombre: "FUEGO🔥", id: "boton_fuego"},
+    {nombre: "AGUA💧", id: "boton_agua"},
+    {nombre: "TIERRA🌱", id: "boton_tierra"},
+)
+
 mokepones.push(hipodoge, capipepo, ratigueya)
 
 function iniciarJuego(){    
@@ -142,8 +164,6 @@ function iniciarJuego(){
 
 function seleccionarMascotaJugador(){
     sectionSeleccionarMascota.style.display="none"
-
-    //sectionSeleccionarAtaque.style.display="flex"
     //#region Lienzo
     //#endregion
     
@@ -164,7 +184,6 @@ function seleccionarMascotaJugador(){
     extraerAtaques(mascotaJugador)
     sectionVerMapa.style.display="flex"
     iniciarMapa()
-    seleccionarMascotaEnemigo()
 }
 
 function extraerAtaques(mascotaJugador){
@@ -210,11 +229,9 @@ function secuenciaAtaque(){
     })
 }
 
-function seleccionarMascotaEnemigo(){
-    let mascotaAleatoria = aleatorio(0,mokepones.length -1)
-
-    spanMascotaEnemigo.innerHTML = mokepones[mascotaAleatoria].nombre
-    ataquesMokeponEnemigo = mokepones[mascotaAleatoria].ataques
+function seleccionarMascotaEnemigo(enemigo){
+    spanMascotaEnemigo.innerHTML = enemigo.nombre
+    ataquesMokeponEnemigo = enemigo.ataques
     secuenciaAtaque()
 }
 
@@ -303,7 +320,6 @@ function crearMensaje(resultado){
 function crearMensajeFinal(resultadoCombate){
     alert(resultadoCombate)
 
-    deshabilitarBotonesAtaque()
 }
 
 function reiniciarJuego(){
@@ -434,7 +450,10 @@ function revisarColision(enemigo){
         return
     }
     detenerMovimiento()
-    alert("Hay colision" + " con " + enemigo.nombre)
+    clearInterval(intervalo)
+    sectionSeleccionarAtaque.style.display="flex"   
+    sectionVerMapa.style.display="none"
+    seleccionarMascotaEnemigo(enemigo)
 }
 
 window.addEventListener("load",iniciarJuego)
