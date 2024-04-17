@@ -96,10 +96,15 @@ input {
   background: #F2AFEF;
   padding: 1px;
   box-sizing:border-box;
-  margin: 10px;
   border: 1px solid black;
   cursor: pointer;
+  margin: 10px;
   transition: .3s;
+  font-family: "Pixelify Sans", sans-serif;
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items:center;
 }
 
 .botones_movimiento:hover {
@@ -111,12 +116,9 @@ input {
   transform: scale(0.9);
 }
 
-#boton_mover{
-  font-family: "Pixelify Sans", sans-serif;
-  display:flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items:center;
+#botones_movimiento_1{
+  color:black; 
+  display: flex;
 }
 
 #boton_mascota{
@@ -291,5 +293,13 @@ body ::-webkit-scrollbar-thumb {
     width: 340px;
     height: 250px;
     padding: 12px;
+  }
+}
+
+@media  (max-width:  360px){
+  #ver_mapa div {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
   }
 }
